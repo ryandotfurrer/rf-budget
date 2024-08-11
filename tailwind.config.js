@@ -22,6 +22,17 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      fontSize: {
+        xs: "clamp(0.64rem, 0.71rem + -0.0778vw, 0.6944rem)",
+        sm: "clamp(0.8rem, 0.8429rem + -0.0476vw, 0.8333rem)",
+        base: "clamp(1rem, 1rem + 0vw, 1rem)",
+        lg: "clamp(1.2rem, 1.1857rem + 0.0714vw, 1.25rem)",
+        xl: "clamp(1.44rem, 1.405rem + 0.175vw, 1.5625rem)",
+        "2xl": "clamp(1.728rem, 1.6637rem + 0.3216vw, 1.9531rem)",
+        "3xl": "clamp(2.0736rem, 1.9685rem + 0.5254vw, 2.4414rem)",
+        "4xl": "clamp(2.4883rem, 2.3273rem + 0.8049vw, 3.0518rem)",
+        "5xl": "clamp(2.986rem, 2.7492rem + 1.1839vw, 3.8147rem)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -56,6 +56,8 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --clerk-color-primary: #ca8a04;
+    --clerk-color-text: #09090b;
   }
 }
 
@@ -66,4 +68,47 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-balance font-semibold;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply leading-none tracking-tight;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+}
+
+.debug {
+  @apply outline outline-red-500;
 }

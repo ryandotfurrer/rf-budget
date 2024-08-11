@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
 import "../styles/globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Inter as FontSans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/ui/mode-toggle";
+import Navbar from "@/components/navbar";
+import type { Metadata } from "next";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,46 +22,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable,
+          )}
         >
-          <nav>
-            <ul className="flex justify-between">
-              <span>
-                <li>
-                  <a href="#">RF Budget</a>
-                </li>
-              </span>
-              <span className="flex gap-4">
-                <li>
-                  <a href="#">Features</a>
-                </li>
-                <li>
-                  <a href="#">FAQ</a>
-                </li>
-                <li>
-                  <a href="#">About</a>
-                </li>
-              </span>
-              <span>
-                <ModeToggle />
-                <Button>Sign In</Button>
-              </span>
-            </ul>
-          </nav>
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+          <div className="max-w-screen-2xl mx-auto py-8 px-4 2xl:px-0">
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Navbar />
+              {children}
+            </ThemeProvider>
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
